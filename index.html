@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Start</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="favicon.ico" />
 </head>
 <body>
     <header></header>
@@ -25,10 +26,10 @@
         'q': 'qq.com', 
         'w': 'weibo.com', 
         'e': 'ele.me', 
-        'r': 'renren.com', 
-        't': 'tianya.com', 
+        'r': 'runoob.com', 
+        'c': 'css-tricks.com', 
         'y': 'youtube.com', 
-        'u': 'uc.com' , 
+        'b': 'bilibili.com' , 
         'i': 'iqiyi.com', 
         'o': 'opera.com', 
         'p': undefined, 
@@ -47,7 +48,7 @@
         return document.createElement(tagName)
     }
 
-    //2.生成键盘
+    //2.生成键盘，以后添加其他键
     for(var index1 = 0; index1 < keys['length']; index1++){
         var div1 = ctag('div')
 
@@ -91,8 +92,11 @@
     //3.监听用户
     document.onkeypress = function(keypress){
         var key = keypress['key']
-        var website = hash[key]
-        window.open('http://'+website, '_blank')
+        var asc = key.charCodeAt() //ascii值
+        if(asc>='97' && asc<='122'){//判断是否为a~z
+            var website = hash[key]
+            window.open('http://'+website, '_blank')
+        }
     }
 </script>
 </html>
