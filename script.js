@@ -73,16 +73,23 @@ for(var index1 = 0; index1 < keys['length']; index1++){
     }
 }
 //3.监听用户
+var checkText = true
 document.onkeypress = function(keypress){
-    var key = keypress['key']
-    var asc = key.charCodeAt() //ascii值
-    if(asc>='97' && asc<='122'){//判断是否为a~z
-        var website = hash[key]
-        window.open('http://'+ website, '_blank')
+    if(checkText){
+        var key = keypress['key']
+        var asc = key.charCodeAt() //ascii值
+        if(asc>='97' && asc<='122'){//判断是否为a~z
+            var website = hash[key]
+            window.open('http://'+ website, '_blank')
+        }
     }
 }
-
-baidu.onclick = function(){
-    console.log(inputText.value)
+//获取焦点
+textInput.onfocus = function(){
+    checkText = false
+}
+//失去焦点
+textInput.onblur = function(){
+    checkText = true
 }
 
