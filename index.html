@@ -12,9 +12,9 @@
             <img src="./juzi.png" alt="图标">
             <div class="search clearfix">
                 <form action="http://www.baidu.com/baidu" target="_blank">
-                    <input id="textInput" class="textInput" type="text" name="word">
+                    <input id="textInput" class="textInput" type="text" name="word" value>
                     <input class="btn" type="submit" value="百度搜索">
-                    <input class="btn" type="submit" value="Google" formaction="http://www.google.com/">
+                    <input class="btn" type="submit" value="谷歌搜索" onclick="window.open('http://www.google.com/search?q='+word.value,'')">
                 </form>
             </div>
         </div>
@@ -27,4 +27,4 @@
 </body>
 <script src="./script.js"></script>
 </html>
-
+<input type="button" class="button"  value="谷歌搜索">
